@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>详细内容</title>
+    <style>
+		body {
+		    font-family: Arial, sans-serif;
+		    background-color:;
+		    margin: 0;
+		    padding: 0;
+		  }
+		
+		.kaitou{  /*详细内容的样式*/
+			background-color: bisque;
+			font-family: "宋体";
+			font-size: 5px;
+			height: 55px;
+			width: auto;
+		}
+		.container {  
+		    max-width: 100%;
+		    margin: 0 auto;
+		    padding: 10px;
+		    background-color: snow;/*整体的颜色*/
+		    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+		    border-radius: 8px;
+		    box-sizing: border-box;
+		  }
+		  
+		    
+		  #text {  /*描述文字的样式*/
+		     
+		      height: 200px; /* 初始显示的高度 */  
+		      overflow: hidden; /* 隐藏超出段落元素的内容 */  
+		      transition: height 0.3s ease; /* 添加过渡效果 */  
+		  }
+		
+		  h1 {   /*评论区的标题大小*/
+		    font-family:"";
+		    font-size: 24px;
+		    color: #333;
+		    margin-bottom: 20px;
+		  }
+		
+		  p {
+		    font-size: 16px;
+		    color: #666;
+		    line-height: 1.5;
+		    margin-bottom: 0px;
+		  }
+		
+		  button {
+			  padding: 5px 10px;
+			  font-size: 10px;
+			  color:navajowhite;
+			  background-color: whitesmoke;
+			  border: none;
+			  border-radius: 4px;
+			  cursor: pointer;
+		  }
+		
+		  button:hover {
+		    background-color: #0056b3;
+		  }
+		  
+		#box{
+			overflow: auto;/*也可以手动设置：height：80px;*/
+			width:100%;/*整个的长度*/
+			margin: auto;
+			}
+		
+		#tupian{
+			margin: 5px;
+			border: 1px solid goldenrod;
+			padding: 10px;
+			height: 300px;
+            width: 30%;
+			float: left; 
+		}
+		
+		#miao{
+			height: auto;
+			width:60%;
+			float: left;
+			margin: 5px;
+			border: 1px solid goldenrod;
+			padding: 10px;
+			background-color: ;/*描述的背景颜色*/
+			
+			overflow: hidden; /* 隐藏超出容器的内容 */  
+		}
+		#tupian img{
+					width: 100%;
+					height: 100%;
+				}
+				
+		      #comment-area {
+		        border: 1px solid #ccc;
+		        padding: 10px;
+		        margin-bottom: 20px;
+		      }
+			  a.custom-link {
+			    display: inline-block; /* 将超链接转换为行内块元素 */  
+			    padding: 3px 12px; /* 添加内边距 */  
+			    text-align: center; /* 居中文本 */  
+			    background-color: goldenrod; /* 设置背景颜色 */  
+			    border: 2px solid darkgoldenrod; /* 设置边框宽度、样式和颜色 */  
+			    color: #FFFFFF; /* 设置文本颜色 */  
+			    text-decoration: none; /* 移除默认的下划线 */  
+			    font-size: 18px; /* 设置字体大小 */  
+			    transition: all 0.3s ease; /* 添加过渡效果 */  
+			  	border-radius: 5px 5px 5px 5px;
+			  }  
+			  a.custom-link:hover {  
+			    background-color: darkgoldenrod; /* 鼠标悬停时改变背景颜色 */  
+			    border-color: darkgoldenrod; /* 鼠标悬停时改变边框颜色 */  
+			  }  
+		    </style>
+		  </head>
+		  <body>
+			
+			<div class="container">
+				
+				<div class="kaitou">
+					<a href="聚雅餐厅.html" class="custom-link">返回</a >
+					<p style="text-align: center; line-height: 0;">详细内容</p >
+				</div>
+				  
+			<div id="box">
+				
+		    <div id="tupian">
+				<img src="img/xjcmf.jpg" alt="" />
+			</div>
+			
+			<div id="miao">  
+			        <p id="text">  
+			            新疆炒米粉是新疆地区的传统美食之一。
+			            它以细米粉为主料，搭配各种独特的调料和配料而制成。
+			            下面我将为您详细介绍一下制作过程和特点。
+			            制作新疆炒米粉首先需要准备好细米粉、牛肉、洋葱、胡萝卜、青椒、辣椒、大葱等材料。
+			            将细米粉泡软备用。然后将牛肉切成丝状，洋葱、胡萝卜、青椒切成细丝。接着，在锅里加入适量的油，
+			            放入洋葱丝炒香，再加入牛肉丝翻炒至变色。随后，加入胡萝卜丝、青椒丝和辣椒翻炒均匀，使其更加入味。
+			            最后，将泡软的细米粉加入锅中，继续翻炒至米粉与调料充分融合，出现焦香的味道即可起锅。
+			            在上盘前，撒上一些切碎的大葱作为装饰。这样一份美味的新疆炒米粉就做好了。 
+			        </p >  
+			        <button id="toggle-button">查看更多</button>  
+			    
+			</div>
+			
+			</div>	
+			
+		    <h1>评论区</h1>
+		
+		    <textarea id="comment-input" rows="4" cols="50"></textarea>
+		    <button onclick="addComment()">提交评论</button>
+		
+		    <div id="comment-area"></div>
+		
+		    <script>
+		      function addComment() {
+		        var comment = document.getElementById("comment-input").value;
+		        var commentArea = document.getElementById("comment-area");
+		
+		        // 创建一个新的评论元素，并将用户输入的评论内容作为其文本节点添加进去
+		        var newComment = document.createElement("p");
+		        var commentText = document.createTextNode(comment);
+		        newComment.appendChild(commentText);
+		
+		        // 将新的评论元素添加到评论区中
+		        commentArea.appendChild(newComment);
+		
+		        // 清空评论输入框
+		        document.getElementById("comment-input").value = "";
+				
+				
+		      }
+			   // script.js
+			  	  document.addEventListener('DOMContentLoaded', function() {  
+			  	      var text = document.getElementById('text');  
+			  	      var button = document.getElementById('toggle-button');  
+			  	      var isExpanded = false; // 跟踪段落是否已展开的标志  
+			  	      var fullHeight = text.scrollHeight; // 获取段落完整内容的高度  
+			  	      text.style.height = '200px'; // 初始设置段落高度为60px（或你想要的任何高度）  
+			  	    
+			  	      button.addEventListener('click', function() {  
+			  	          if (isExpanded) {  
+			  	              text.style.height = '100px'; // 折叠段落时的高度  
+			  	              button.innerText = '查看更多'; // 更新按钮文本  
+			  	          } else {  
+			  	              text.style.height = fullHeight + 'px'; // 展开段落到完整高度  
+			  	              button.innerText = '收起'; // 更新按钮文本  
+			  	          }  
+			  	          isExpanded = !isExpanded; // 切换展开/折叠状态  
+			  	      });  
+			  	  });
+			  	  
+			  	
+			      </script>
+			  </div>
+			  
+			    </body>
+			  </html>
